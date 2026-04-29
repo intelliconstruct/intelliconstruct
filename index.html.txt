@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>INTELLICONSTRUCT</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+header {
+  background: #0a1f44;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(rgba(10,31,68,0.7), rgba(10,31,68,0.7)),
+  url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h2 {
+  font-size: 40px;
+}
+
+/* ACTIVITES */
+.section-title {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 40px;
+}
+
+.card {
+  width: 250px;
+  background: #f5f5f5;
+  padding: 30px;
+  margin: 10px;
+  text-align: center;
+  border-radius: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.card:hover {
+  background: #0a1f44;
+  color: white;
+  transform: translateY(-5px);
+}
+
+/* EXPERTISE */
+.expertise {
+  background: #eef2f7;
+  padding: 40px;
+  text-align: center;
+}
+
+/* FOOTER */
+footer {
+  background: #0a1f44;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+  <h1>INTELLICONSTRUCT</h1>
+  <p>Génie Civil & Construction</p>
+  <p>📞 +212 6 66 91 65 52 | 📧 intelliconstruct.ma@gmail.com</p>
+</header>
+
+<div class="hero">
+  <h2>Construire avec intelligence et expertise</h2>
+  <p>Qualité • Sécurité • Respect des délais</p>
+</div>
+
+<h2 class="section-title">Nos Activités</h2>
+
+<div class="container">
+
+  <div class="card" onclick="location.href='construction.html'">
+    <h3>Construction</h3>
+    <p>Bâtiments & ouvrages</p>
+  </div>
+
+  <div class="card" onclick="location.href='gros-oeuvre.html'">
+    <h3>Gros œuvre</h3>
+    <p>Fondations, structures</p>
+  </div>
+
+  <div class="card" onclick="location.href='renovation.html'">
+    <h3>Rénovation</h3>
+    <p>Réhabilitation complète</p>
+  </div>
+
+  <div class="card" onclick="location.href='vrd.html'">
+    <h3>VRD</h3>
+    <p>Voiries & réseaux</p>
+  </div>
+
+</div>
+
+<div class="expertise">
+  <h2>Études & Expertise</h2>
+  <p>Études techniques • Suivi de chantier • Conseil & assistance</p>
+</div>
+
+<footer>
+  <p>Casablanca • Rabat • Khouribga</p>
+</footer>
+
+</body>
+</html>
