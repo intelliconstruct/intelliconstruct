@@ -125,7 +125,7 @@ footer {
 </div>
 
 <footer>
-  <p>Casablanca • Rabat • Khouribga</p>
+  <p></p>
 </footer>
 
 </body>
