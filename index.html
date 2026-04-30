@@ -62,6 +62,25 @@ header {
   transform: translateY(-5px);
 }
 
+/* DETAILS */
+#details {
+  display: none;
+  padding: 40px;
+}
+
+.back {
+  cursor: pointer;
+  color: blue;
+  margin-bottom: 20px;
+}
+
+/* IMAGES */
+img {
+  width: 300px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
 /* EXPERTISE */
 .expertise {
   background: #eef2f7;
@@ -95,29 +114,32 @@ footer {
 
 <h2 class="section-title">Nos Activités</h2>
 
-<div class="container">
+<div id="main" class="container">
 
-  <div class="card" onclick="location.href='construction.html'">
+  <div class="card" onclick="openSection('construction')">
     <h3>Construction</h3>
     <p>Bâtiments & ouvrages</p>
   </div>
 
-  <div class="card" onclick="location.href='gros-oeuvre.html'">
+  <div class="card" onclick="openSection('gros')">
     <h3>Gros œuvre</h3>
     <p>Fondations, structures</p>
   </div>
 
-  <div class="card" onclick="location.href='renovation.html'">
+  <div class="card" onclick="openSection('renovation')">
     <h3>Rénovation</h3>
     <p>Réhabilitation complète</p>
   </div>
 
-  <div class="card" onclick="location.href='vrd.html'">
+  <div class="card" onclick="openSection('vrd')">
     <h3>VRD</h3>
     <p>Voiries & réseaux</p>
   </div>
 
 </div>
+
+<!-- ZONE DETAIL -->
+<div id="details"></div>
 
 <div class="expertise">
   <h2>Études & Expertise</h2>
@@ -125,8 +147,99 @@ footer {
 </div>
 
 <footer>
-  <p></p>
+  <p>Casablanca • Rabat • Khouribga</p>
 </footer>
+
+<script>
+
+function openSection(section) {
+
+  document.getElementById("main").style.display = "none";
+  const details = document.getElementById("details");
+  details.style.display = "block";
+
+  if(section === "construction") {
+    details.innerHTML = `
+      <div class="back" onclick="goBack()">⬅ Retour</div>
+      <h2>Construction</h2>
+
+      <h3 onclick="toggle('batiment')">Bâtiments</h3>
+      <div id="batiment" style="display:none;">
+        <p>Construction d'immeubles et villas.</p>
+        <img src="images/batiment.jpg">
+      </div>
+
+      <h3 onclick="toggle('industriel')">Ouvrages industriels</h3>
+      <div id="industriel" style="display:none;">
+        <p>Hangars, usines, plateformes.</p>
+        <img src="images/industriel.jpg">
+      </div>
+    `;
+  }
+
+  if(section === "gros") {
+    details.innerHTML = `
+      <div class="back" onclick="goBack()">⬅ Retour</div>
+      <h2>Gros œuvre</h2>
+
+      <h3 onclick="toggle('fondations')">Fondations</h3>
+      <div id="fondations" style="display:none;">
+        <p>Semelles, radiers, pieux.</p>
+        <img src="images/fondation.jpg">
+      </div>
+
+      <h3 onclick="toggle('structure')">Structure</h3>
+      <div id="structure" style="display:none;">
+        <p>Béton armé, charpente.</p>
+        <img src="images/structure.jpg">
+      </div>
+    `;
+  }
+
+  if(section === "renovation") {
+    details.innerHTML = `
+      <div class="back" onclick="goBack()">⬅ Retour</div>
+      <h2>Rénovation</h2>
+
+      <h3 onclick="toggle('interieur')">Rénovation intérieure</h3>
+      <div id="interieur" style="display:none;">
+        <p>Aménagement et modernisation.</p>
+        <img src="images/interieur.jpg">
+      </div>
+    `;
+  }
+
+  if(section === "vrd") {
+    details.innerHTML = `
+      <div class="back" onclick="goBack()">⬅ Retour</div>
+      <h2>VRD</h2>
+
+      <h3 onclick="toggle('voirie')">Voirie</h3>
+      <div id="voirie" style="display:none;">
+        <p>Routes, trottoirs.</p>
+        <img src="images/voirie.jpg">
+      </div>
+
+      <h3 onclick="toggle('reseaux')">Réseaux</h3>
+      <div id="reseaux" style="display:none;">
+        <p>Eau, électricité, assainissement.</p>
+        <img src="images/reseaux.jpg">
+      </div>
+    `;
+  }
+}
+
+function goBack() {
+  document.getElementById("main").style.display = "flex";
+  document.getElementById("details").style.display = "none";
+}
+
+function toggle(id) {
+  const el = document.getElementById(id);
+  el.style.display = (el.style.display === "none") ? "block" : "none";
+}
+
+</script>
 
 </body>
 </html>
