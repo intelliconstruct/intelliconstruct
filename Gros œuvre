@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Gros œuvre</title>
+
+<style>
+body { font-family:Arial; margin:0; }
+
+header {
+  background:#0a1f44;
+  color:white;
+  text-align:center;
+  padding:20px;
+}
+
+.gallery {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  padding:20px;
+}
+
+.gallery img, .gallery video {
+  width:300px;
+  border-radius:10px;
+  transition:0.3s;
+}
+
+.gallery img:hover {
+  transform:scale(1.05);
+}
+
+.back {
+  text-align:center;
+  margin:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Gros œuvre</h1>
+  <p>Bâtiments & ouvrages réalisés</p>
+</header>
+
+<div class="gallery">
+
+  <img src="images/projet1.jpg">
+  <img src="images/projet2.jpg">
+
+  <video controls>
+    <source src="videos/projet1.mp4">
+  </video>
+
+</div>
+
+<div class="back">
+  <a href="index.html">⬅ Retour</a>
+</div>
+
+</body>
+</html>
