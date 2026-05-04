@@ -5,241 +5,95 @@
 <title>INTELLICONSTRUCT</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
+body { margin:0; font-family:Arial; }
 
-/* HEADER */
 header {
-  background: #0a1f44;
-  color: white;
-  padding: 20px;
-  text-align: center;
+  background:#0a1f44;
+  color:white;
+  text-align:center;
+  padding:20px;
 }
 
-/* HERO */
 .hero {
   background: linear-gradient(rgba(10,31,68,0.7), rgba(10,31,68,0.7)),
   url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');
-  background-size: cover;
-  color: white;
-  text-align: center;
-  padding: 100px 20px;
-}
-
-.hero h2 {
-  font-size: 40px;
-}
-
-/* ACTIVITES */
-.section-title {
-  text-align: center;
-  margin-top: 40px;
+  background-size:cover;
+  color:white;
+  text-align:center;
+  padding:100px 20px;
 }
 
 .container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  padding: 40px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  padding:40px;
 }
 
 .card {
-  width: 250px;
-  background: #f5f5f5;
-  padding: 30px;
-  margin: 10px;
-  text-align: center;
-  border-radius: 10px;
-  transition: 0.3s;
-  cursor: pointer;
+  width:250px;
+  margin:15px;
+  padding:20px;
+  background:#f5f5f5;
+  text-align:center;
+  border-radius:10px;
+  cursor:pointer;
 }
 
 .card:hover {
-  background: #0a1f44;
-  color: white;
-  transform: translateY(-5px);
+  background:#0a1f44;
+  color:white;
 }
 
-/* DETAILS */
-#details {
-  display: none;
-  padding: 40px;
-}
-
-.back {
-  cursor: pointer;
-  color: blue;
-  margin-bottom: 20px;
-}
-
-/* IMAGES */
-img {
-  width: 300px;
-  margin-top: 10px;
-  border-radius: 10px;
-}
-
-/* EXPERTISE */
-.expertise {
-  background: #eef2f7;
-  padding: 40px;
-  text-align: center;
-}
-
-/* FOOTER */
 footer {
-  background: #0a1f44;
-  color: white;
-  text-align: center;
-  padding: 20px;
+  background:#0a1f44;
+  color:white;
+  text-align:center;
+  padding:20px;
 }
 </style>
-
 </head>
 
 <body>
 
 <header>
   <h1>INTELLICONSTRUCT</h1>
-  <p>Génie Civil & Construction</p>
   <p>📞 +212 6 66 91 65 52 | 📧 intelliconstruct.ma@gmail.com</p>
 </header>
 
 <div class="hero">
   <h2>Construire avec intelligence et expertise</h2>
-  <p>Qualité • Sécurité • Respect des délais</p>
 </div>
 
-<h2 class="section-title">Nos Activités</h2>
+<div class="container">
 
-<div id="main" class="container">
-
-  <div class="card" onclick="openSection('construction')">
+  <div class="card" onclick="location.href='construction.html'">
     <h3>Construction</h3>
     <p>Bâtiments & ouvrages</p>
   </div>
 
-  <div class="card" onclick="openSection('gros')">
+  <div class="card" onclick="location.href='gros-oeuvre.html'">
     <h3>Gros œuvre</h3>
-    <p>Fondations, structures</p>
+    <p>Fondations & structures</p>
   </div>
 
-  <div class="card" onclick="openSection('renovation')">
+  <div class="card" onclick="location.href='renovation.html'">
     <h3>Rénovation</h3>
-    <p>Réhabilitation complète</p>
   </div>
 
-  <div class="card" onclick="openSection('vrd')">
+  <div class="card" onclick="location.href='vrd.html'">
     <h3>VRD</h3>
-    <p>Voiries & réseaux</p>
   </div>
 
 </div>
 
-<!-- ZONE DETAIL -->
-<div id="details"></div>
-
-<div class="expertise">
+<div style="text-align:center; padding:40px;">
   <h2>Études & Expertise</h2>
-  <p>Études techniques • Suivi de chantier • Conseil & assistance</p>
+  <button onclick="location.href='expertise.html'">Voir plus</button>
 </div>
 
 <footer>
-  <p></p>
 </footer>
-
-<script>
-
-function openSection(section) {
-
-  document.getElementById("main").style.display = "none";
-  const details = document.getElementById("details");
-  details.style.display = "block";
-
-  if(section === "construction") {
-    details.innerHTML = `
-      <div class="back" onclick="goBack()">⬅ Retour</div>
-      <h2>Construction</h2>
-
-      <h3 onclick="toggle('batiment')">Bâtiments</h3>
-      <div id="batiment" style="display:none;">
-        <p>Construction d'immeubles et villas.</p>
-        <img src="images/batiment.jpg">
-      </div>
-
-      <h3 onclick="toggle('industriel')">Ouvrages industriels</h3>
-      <div id="industriel" style="display:none;">
-        <p>Hangars, usines, plateformes.</p>
-        <img src="images/industriel.jpg">
-      </div>
-    `;
-  }
-
-  if(section === "gros") {
-    details.innerHTML = `
-      <div class="back" onclick="goBack()">⬅ Retour</div>
-      <h2>Gros œuvre</h2>
-
-      <h3 onclick="toggle('fondations')">Fondations</h3>
-      <div id="fondations" style="display:none;">
-        <p>Semelles, radiers, pieux.</p>
-        <img src="images/fondation.jpg">
-      </div>
-
-      <h3 onclick="toggle('structure')">Structure</h3>
-      <div id="structure" style="display:none;">
-        <p>Béton armé, charpente.</p>
-        <img src="images/structure.jpg">
-      </div>
-    `;
-  }
-
-  if(section === "renovation") {
-    details.innerHTML = `
-      <div class="back" onclick="goBack()">⬅ Retour</div>
-      <h2>Rénovation</h2>
-
-      <h3 onclick="toggle('interieur')">Rénovation intérieure</h3>
-      <div id="interieur" style="display:none;">
-        <p>Aménagement et modernisation.</p>
-        <img src="images/interieur.jpg">
-      </div>
-    `;
-  }
-
-  if(section === "vrd") {
-    details.innerHTML = `
-      <div class="back" onclick="goBack()">⬅ Retour</div>
-      <h2>VRD</h2>
-
-      <h3 onclick="toggle('voirie')">Voirie</h3>
-      <div id="voirie" style="display:none;">
-        <p>Routes, trottoirs.</p>
-        <img src="images/voirie.jpg">
-      </div>
-
-      <h3 onclick="toggle('reseaux')">Réseaux</h3>
-      <div id="reseaux" style="display:none;">
-        <p>Eau, électricité, assainissement.</p>
-        <img src="images/reseaux.jpg">
-      </div>
-    `;
-  }
-}
-
-function goBack() {
-  document.getElementById("main").style.display = "flex";
-  document.getElementById("details").style.display = "none";
-}
-
-function toggle(id) {
-  const el = document.getElementById(id);
-  el.style.display = (el.style.display === "none") ? "block" : "none";
-}
-
-</script>
 
 </body>
 </html>
