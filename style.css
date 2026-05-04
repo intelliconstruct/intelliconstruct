@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+}
+
+/* HEADER */
+header {
+  background: #0a1f44;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* MENU */
+nav {
+  background: #0d2a5a;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  padding: 15px 20px;
+  text-decoration: none;
+  display: block;
+}
+
+nav a:hover {
+  background: #163a7a;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(rgba(10,31,68,0.7), rgba(10,31,68,0.7)),
+  url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+/* CARDS */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px;
+}
+
+.card {
+  width: 250px;
+  margin: 15px;
+  padding: 20px;
+  background: white;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card:hover {
+  background: #0a1f44;
+  color: white;
+  transform: translateY(-5px);
+}
+
+/* GALLERY */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+}
+
+.gallery img, .gallery video {
+  width: 300px;
+  border-radius: 10px;
+}
+
+/* FOOTER */
+footer {
+  background: #0a1f44;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
